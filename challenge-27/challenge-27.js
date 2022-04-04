@@ -80,8 +80,28 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
     
     DOM.prototype.isArray = function isArray( param ) {
       return Object.prototype.toString.call( param ) === '[object Array]';
-
     };
+    
+    DOM.prototype.isFuntion = function isFunction( param ) {
+      return Object.prototype.toString.call( param ) === '[object Funtion]';
+    };
+
+    DOM.prototype.isNumber = function isNumber( param ) {
+      return Object.prototype.toString.call( param ) === '[object Number]';
+    };
+
+    DOM.prototype.isString = function isString( param ) {
+      return Object.prototype.toString.call( param ) === '[object String]';
+    };
+
+    DOM.prototype.isBoolean = function isBoolean( param ) {
+      return Object.prototype.toString.call( param ) === '[object Boolean]';
+    };
+
+    DOM.prototype.isNull = function isNull( param ) {
+      return Object.prototype.toString.call( param ) === '[object NUll]' || Object.getPrototypeOf.toString.call( param ) === '[object Undefined]';
+    };
+
     var dom = new DOM();
     console.log( dom.isArray([1, 2, 3]) );
 })();
